@@ -2,10 +2,21 @@
 
 Static public pages (Privacy Policy, Terms of Use, Support, Account Deletion) required
 by Google Play and the App Store for the **PMR Field App** mobile app
-(`com.pmrroofing.fieldapp`, repo `pmr-field-app`).
+(`com.pmrroofing.fieldapp`, repo [`pmr-field-app`](https://github.com/gerardo503/pmr-field-app)).
 
 Deployed separately from the app repo so these pages can be edited and published
-without a mobile build. No backend, no login, no build step — plain HTML/CSS.
+without a mobile build. No backend, no login, no build step — plain HTML/CSS/JS.
+
+## Part of the PMR Field App family of repos
+
+PMR Roofing's internal tooling is split across a few repos — kept separate so this one
+can be the single **public** piece without pulling app code or secrets into it:
+
+| Repo | What it is | Public? |
+|---|---|---|
+| `pmr-connect` | PMR Connect: PMR's operations platform (API + web app at `connect.pmrroofing.com`), used by office/admin staff | No — internal |
+| [`pmr-field-app`](https://github.com/gerardo503/pmr-field-app) | PMR Field App, the mobile client for field crews/technicians | No — internal |
+| **`pmr-field-app-legal`** (this repo) | Public legal pages for PMR Field App | **Yes** |
 
 ## Pages
 - `index.html` — links to all pages
