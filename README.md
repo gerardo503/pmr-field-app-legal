@@ -15,9 +15,9 @@ without a mobile build. No backend, no login, no build step — plain HTML/CSS.
 - `delete-account.html` — Account/data deletion request process
 
 ## Before publishing for real
-- Replace `REPLACE-WITH-PMR-EMAIL` in `privacy.html`, `terms.html`, `support.html`, `delete-account.html`.
+- Contact email set to `dev@pmrroofing.com` (2026-10-01).
 - Confirm data retention periods and what the backend (`pmr-connect`) can actually delete.
-- Point a subdomain (e.g. `legal.pmrroofing.com` or `privacy.pmrroofing.com` — pending Vitas) at this repo's deployment.
+- Point a subdomain (e.g. `legal.pmrroofing.com` or `privacy.pmrroofing.com` — requested from Vitas, response pending) at this repo's deployment.
 
 ## Deploy
 Live now on GitHub Pages: https://gerardo503.github.io/pmr-field-app-legal/
