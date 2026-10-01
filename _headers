@@ -1,0 +1,14 @@
+# Netlify / Cloudflare Pages header file. GitHub Pages ignores this file and
+# does not support custom response headers at all — the CSP/referrer-policy
+# meta tags in each HTML page are the only protection while this site is on
+# GitHub Pages. If/when this moves to a host that supports _headers (Netlify,
+# Cloudflare Pages) or a reverse proxy, these take over and are stronger
+# (a header can't be bypassed by a page that forgets its meta tags, and only
+# a header can set frame-ancestors / HSTS / nosniff at all).
+/*
+  Content-Security-Policy: default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.squarespace-cdn.com; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload

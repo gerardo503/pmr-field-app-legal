@@ -35,3 +35,5 @@ th,td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:to
 .muted{color:var(--muted);font-size:.9rem}
 a{color:var(--accent)}
 button[data-copy-email]{font-family:inherit}
+.site-footer{margin-top:3rem;border-top:1px solid var(--line);padding-top:16px}
+.copy-btn{margin-left:4px;font-size:.8rem;padding:2px 8px;border:1px solid var(--line);background:transparent;color:var(--fg);border-radius:4px;cursor:pointer}

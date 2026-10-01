@@ -44,3 +44,22 @@ Any other static host also works as-is (Netlify, Cloudflare Pages) if preferred.
 - `site.js` — small vanilla JS: fills in the footer year, and a "Copy" button next
   to the contact email on Support and Delete account. No tracking, no third-party
   calls.
+
+## Security
+
+Applied now (works on any static host, including GitHub Pages):
+- Strict `Content-Security-Policy` and `Referrer-Policy` meta tags on every page —
+  only this origin, Google Fonts, and the PMR logo CDN are allowed; no inline
+  scripts/styles (all CSS lives in `style.css`, no `style="..."` attributes), no
+  third-party connections.
+- HTTPS enforced (GitHub Pages does this automatically for `*.github.io` and for a
+  custom domain once one is attached).
+- No forms, no cookies, no analytics, no user input stored anywhere.
+
+**Known gap while hosted on GitHub Pages:** it does not support custom HTTP response
+headers, so `X-Frame-Options`, `X-Content-Type-Options`, `Strict-Transport-Security`
+and a header-level CSP can't be set yet — only what a `<meta>` tag can express. The
+`_headers` file in this repo (Netlify/Cloudflare Pages format) already has the full
+set ready to go the moment this moves to a host that supports it, or behind a reverse
+proxy. Re-apply it (or an equivalent nginx/CDN config) once the real production
+subdomain and host are decided.
