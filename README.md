@@ -20,5 +20,16 @@ without a mobile build. No backend, no login, no build step — plain HTML/CSS.
 - Point a subdomain (e.g. `legal.pmrroofing.com` or `privacy.pmrroofing.com` — pending Vitas) at this repo's deployment.
 
 ## Deploy
-Any static host works (GitHub Pages, Netlify, Cloudflare Pages). For GitHub Pages:
-Settings → Pages → Deploy from branch `main` / root.
+Live now on GitHub Pages: https://gerardo503.github.io/pmr-field-app-legal/
+
+This is a temporary URL while we wait for a PMR subdomain (requested from Vitas,
+e.g. `legal.pmrroofing.com`). Once that subdomain exists, add a `CNAME` file here
+and point its DNS (CNAME record) at `gerardo503.github.io`, then update the URLs
+in the Play Console / App Store Connect listings and inside the app.
+
+Any other static host also works as-is (Netlify, Cloudflare Pages) if preferred.
+
+## Files
+- `site.js` — small vanilla JS: fills in the footer year, and a "Copy" button next
+  to the contact email on Support and Delete account. No tracking, no third-party
+  calls.
