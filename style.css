@@ -1,12 +1,37 @@
-:root{--bg:#fff;--fg:#1a1a1a;--muted:#5a5a5a;--accent:#b3261e;--line:#e5e5e5}
-@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#eee;--muted:#a5a5a5;--accent:#ff8a80;--line:#333}}
+:root{
+  --bg:#fff;
+  --fg:#1b2f33;
+  --muted:#5c6b6e;
+  --accent:#f7712f;
+  --line:#e5e2db;
+  --header-bg:#1b2f33;
+  --header-fg:#eee9e0;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#15211f;
+    --fg:#eee9e0;
+    --muted:#a9b2ad;
+    --accent:#ff8a50;
+    --line:#2b3a38;
+    --header-bg:#0f1a18;
+    --header-fg:#eee9e0;
+  }
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,system-ui,Segoe UI,Roboto,sans-serif}
-main{max-width:720px;margin:0 auto;padding:24px 16px 64px}
-nav{display:flex;flex-wrap:wrap;gap:16px;padding:16px;border-bottom:1px solid var(--line);max-width:720px;margin:0 auto}
-nav a{color:var(--accent);text-decoration:none;font-weight:600}
-h1{font-size:1.8rem;line-height:1.2}h2{margin-top:2rem;font-size:1.25rem}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Roboto,-apple-system,system-ui,Segoe UI,sans-serif}
+h1,h2,h3{font-family:"Roboto Slab",Georgia,serif;font-weight:400;line-height:1.2}
+h1{font-size:2rem}
+h2{margin-top:2.2rem;font-size:1.3rem}
+.site-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;background:var(--header-bg);padding:16px 24px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--header-fg);text-decoration:none;font-family:"Roboto Slab",Georgia,serif;font-size:1.1rem}
+.brand img{height:36px;width:auto;display:block}
+.site-header nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+.site-header nav a{color:var(--header-fg);text-decoration:none;font-size:.95rem;opacity:.85}
+.site-header nav a:hover{opacity:1;color:var(--accent)}
+main{max-width:720px;margin:0 auto;padding:40px 16px 64px}
 table{border-collapse:collapse;width:100%;font-size:.95rem}
 th,td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
 .muted{color:var(--muted);font-size:.9rem}
 a{color:var(--accent)}
+button[data-copy-email]{font-family:inherit}
