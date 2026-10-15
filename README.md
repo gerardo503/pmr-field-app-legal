@@ -45,6 +45,45 @@ Any other static host also works as-is (Netlify, Cloudflare Pages) if preferred.
   to the contact email on Support and Delete account. No tracking, no third-party
   calls.
 
+## Cloudflare Worker (`worker.js`) — the production-style site
+
+`worker.js` is the **same legal site as a single, dependency-free Cloudflare Worker**
+(about, privacy, terms, support, account deletion — one file, CSS and script included).
+It is the version meant for `pmrroofing.ai` (owned by Paragon Multi-Family Roofing, Inc.,
+the same company as `pmrroofing.com`), and unlike GitHub Pages it sends **real HTTP
+security headers** (CSP with a per-request nonce, HSTS, `X-Frame-Options`, `nosniff`,
+`Permissions-Policy`). The static `.html` files in this repo remain the interim
+GitHub Pages version.
+
+### Deploy (copy & paste, ~5 minutes)
+
+1. Cloudflare dashboard → **Workers & Pages** → **Create** → **Create Worker** →
+   name it (e.g. `pmr-legal`) → **Deploy**.
+2. **Edit code** → delete the sample → paste the entire contents of `worker.js` →
+   **Deploy**.
+3. **Settings → Domains & Routes → Add → Custom domain** → `pmrroofing.ai` (or a
+   subdomain such as `legal.pmrroofing.ai`). If the domain's DNS is already in your
+   Cloudflare account, Cloudflare creates the record and certificate by itself —
+   no one else has to touch DNS.
+4. Check it: `curl -sI https://pmrroofing.ai/privacy` should return `200` and the
+   security headers; open `/privacy`, `/terms`, `/support`, `/delete-account`.
+
+### URLs for the stores
+| Where | Field | URL |
+|---|---|---|
+| Google Play | Privacy policy | `https://<domain>/privacy` |
+| Google Play | Account deletion (Data safety) | `https://<domain>/delete-account` |
+| App Store Connect | Privacy Policy URL | `https://<domain>/privacy` |
+| App Store Connect | Support URL | `https://<domain>/support` |
+
+### Editing
+Everything editable is in the `CONFIG` object at the top of `worker.js` (emails, phone,
+address, dates, retention numbers, the optional "pending legal review" ribbon). The legal
+wording is tied to what the apps and the PMR Connect backend actually do — see the
+"Facts this text relies on" comment at the bottom of the file before changing it, and
+bump `lastUpdated` whenever the text changes. Old `*.html` paths redirect (301) to the
+new routes.
+
 ## Security
 
 Applied now (works on any static host, including GitHub Pages):
