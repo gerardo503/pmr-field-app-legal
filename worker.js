@@ -359,11 +359,12 @@ ${c.showReviewBanner ? '<div class="ribbon" role="note">Pending legal review —
       <tr><td><strong>Work activity</strong></td><td>Check-in / check-out times, job status updates, notes, expenses, incident reports and messages with the office.</td><td>Run and document jobs, safety follow-up, customer service and warranty records.</td></tr>
       <tr><td><strong>Photos</strong></td><td>Job-site photos you take or choose (before / after / damage / other), attached to a specific job.</td><td>Evidence of work performed. Only photos you select are uploaded.</td></tr>
       <tr><td><strong>Precise location</strong></td><td>Your device’s GPS position, only while the app is open on screen and only after you grant permission.</td><td>(a) Show your position on the route map and give directions — this happens on your device. (b) If ${esc(c.brand)} has turned on live location for your crew, your position is sent to ${esc(c.webAppName)} <em>only during an active job visit</em> so the office can see where crews are. It stops when you check out, sign out or revoke permission.</td></tr>
+      <tr><td><strong>Face ID / Touch ID (optional)</strong></td><td>Nothing. If you turn it on, your phone checks your face or fingerprint itself and tells the app only “yes” or “no”. The app never receives, stores or sends your face or fingerprint, and it does not save your password.</td><td>An optional lock so only you can open the app on your phone. You can turn it off in Profile at any time.</td></tr>
       <tr><td><strong>Device &amp; notifications</strong></td><td>Push-notification token, platform (iOS or Android) and app version.</td><td>Deliver job and message notifications; keep the app compatible.</td></tr>
       <tr><td><strong>Technical data</strong></td><td>IP address, timestamps and request metadata recorded in server logs; sign-in tokens kept in your phone’s secure storage.</td><td>Security, abuse prevention and troubleshooting.</td></tr>
     </tbody>
   </table></div>
-  <p><strong>What we do not do.</strong> The apps contain no advertising, no analytics or tracking SDKs and no third-party crash-reporting. We do not collect location in the background (when the app is closed), we do not sell personal information, and we do not use it to track you across other companies’ apps or websites. Work you submit while offline is stored on your device until it can be sent.</p>
+  <p><strong>What we do not do.</strong> The apps contain no advertising, no analytics or tracking SDKs and no third-party crash-reporting. We do not collect location in the background (when the app is closed), we do not sell personal information, and we do not use it to track you across other companies’ apps or websites. Work you submit while offline is stored on your device until it can be sent. To work with a weak signal the app also keeps on your phone a copy of your route and jobs and a short list of your recent incident reports; the copy of your route is removed when you sign out, and anything not yet sent stays on the phone, for you only, until it is sent.</p>
 
   <h3>2. How we use information</h3>
   <p>To operate the apps and run ${esc(c.brand)}’s business: scheduling and dispatch, job documentation, safety and incident follow-up, customer service and warranty, security, and compliance with the law. We do not make automated decisions that have legal or similarly significant effects on you. Because these are workplace tools, your use of them is also subject to ${esc(c.brand)}’s employment or engagement policies.</p>
@@ -396,6 +397,7 @@ ${c.showReviewBanner ? '<div class="ribbon" role="note">Pending legal review —
       <tr><td>Photos / media</td><td>Attaching photos you already have to a job.</td></tr>
       <tr><td>Location — while using the app</td><td>Route map, directions and (if enabled) live crew location during an active visit.</td></tr>
       <tr><td>Notifications</td><td>Job assignments and messages.</td></tr>
+      <tr><td>Face ID / Touch ID</td><td>An optional lock to open the app. The check happens on your phone; the app never receives your face or fingerprint.</td></tr>
     </tbody>
   </table></div>
   <p>Every permission is optional. If you decline one, only the matching feature stops working. You can change or withdraw any permission at any time in your device’s Settings.</p>
